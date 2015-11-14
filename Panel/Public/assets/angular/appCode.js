@@ -1,5 +1,13 @@
 ﻿var arrBlockEditor = ["png", "jpg", "jpeg"];
-var ctrlCode = angular.module("ctrlCode", ['treeControl', 'mc.resizer', 'ngNotify', 'ui.bootstrap.modal', 'ui.bootstrap', 'flow']);
+var ctrlCode = angular.module("ctrlCode", [
+    'treeControl',
+    'mc.resizer',
+    'ngNotify',
+    'ui.bootstrap.modal',
+    'ui.bootstrap',
+    'flow',
+    'focus-me'
+]);
 
 ctrlCode.config(['flowFactoryProvider', function (flowFactoryProvider) {
         flowFactoryProvider.defaults = {
