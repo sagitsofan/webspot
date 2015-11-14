@@ -225,8 +225,10 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="delete()">Delete</button>
-                                        <button type="button" class="btn default" ng-click="deleteModal = false">Cancel</button>
+                                        <button ng-hide="showDeleteConfirm" type="button" class="btnBase btnRed" ng-click="showDeleteConfirm=true">Delete</button>
+                                        <button ng-show="showDeleteConfirm" type="button" class="btnBase btnRed" ng-click="delete()">Confirm Delete</button>
+
+                                        <button type="button" class="btnBase" ng-click="deleteModal = false;showDeleteConfirm=false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -272,8 +274,8 @@
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn default" ng-click="uploadModal = false">Cancel</button>
-                                        <button type="button" class="btn green" ng-click="uploadFiles()">Save</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="uploadModal = false">Cancel</button>
+                                        <button type="button" class="btnBase" ng-click="uploadFiles()">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -296,8 +298,8 @@
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="renameFile()">Save</button>
-                                        <button type="button" class="btn default" ng-click="renameModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="renameFile()">Save</button>
+                                        <button type="button" class="btnBase" ng-click="renameModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -311,7 +313,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>New file</h1>
+                            <h1>Create new file in '{{getNewFileLocationName()}}'</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -320,8 +322,8 @@
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="addNewFile(newFile)">Save</button>
-                                        <button type="button" class="btn default" ng-click="addFileModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="addNewFile(newFile)">Save</button>
+                                        <button type="button" class="btnBase" ng-click="addFileModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -335,7 +337,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>New Folder</h1>
+                            <h1>Create new folder in '{{getNewFileLocationName()}}'</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -344,8 +346,8 @@
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="addNewFolder()">Save</button>
-                                        <button type="button" class="btn default" ng-click="addFolderModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="addNewFolder()">Save</button>
+                                        <button type="button" class="btnBase" ng-click="addFolderModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>

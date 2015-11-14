@@ -373,7 +373,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
                 $scope.treeData = buildTree($scope.flatTree);
                 
                 $scope.deleteModal = false;
-                
+                $scope.showDeleteConfirm = false;
                 //show confirmation
                 ngNotify.set('Deleted ok', { type: 'info' });
             });
@@ -466,6 +466,14 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             });
         }
         
+        $scope.getNewFileLocationName = function(){
+            var file = $scope.getContextMenuFile();
+            if (file.type == "folder")
+                return file.name;
+            else
+                return "/";
+        }
+
         $scope.addNewFile = function () {
             
             if ($scope.newFile == undefined || $scope.newFile == "") {
@@ -487,11 +495,14 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             data._id = null;
             data.name = $scope.newFile;
             data.type = "file";
-            if (file.type == "folder")
-                data.parent = file._id;
-            else
-                data.parent = "";
             
+            if (file.type == "folder"){
+                data.parent = file._id;
+            } else{
+                data.parent = "";
+            }
+                
+
             data.content = "";
             
             DataModel.manage(tempID, data, "add").success(function (results, status, headers, config) {
