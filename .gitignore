@@ -1,3 +1,4 @@
+
 #################
 ## Eclipse
 #################
@@ -215,3 +216,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+Panel/node_modules
+Apps/node_modules
+
