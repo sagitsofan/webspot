@@ -179,9 +179,9 @@
                 </div>
 
                 <div id="bottom-content" ng-dblclick="enlargeBottomTab()">
-                    <div class="bottomContentToggle" ng-init="currentBottomTab = 'Preview'">
-                        <div ng-class="{selected: currentBottomTab == 'CMS'}" ng-click="currentBottomTab = 'CMS'">CMS</div>
-                        <div ng-class="{selected: currentBottomTab == 'Preview'}" ng-click="currentBottomTab = 'Preview'">Preview</div>
+                    <div class="bottomContentToggle">
+                        <div ng-class="{selected: currentBottomTab == 'CMS'}" ng-click="toggleBottomTab('CMS')">CMS</div>
+                        <div ng-class="{selected: currentBottomTab == 'Preview'}" ng-click="toggleBottomTab('Preview')">Preview</div>
                     </div>
                     <div ng-show="currentBottomTab == 'CMS'">
                         <h3>{{currentNode.name}}</h3>

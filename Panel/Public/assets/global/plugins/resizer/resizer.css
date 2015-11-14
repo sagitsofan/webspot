@@ -38,6 +38,7 @@
     right: 0;
     background-color: #fff;
     overflow: auto;
+    overflow-y:hidden;
 }
 #bottom-content {
     position: absolute;

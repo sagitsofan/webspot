@@ -328,6 +328,36 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
         $scope.enlargeBottomTab = function () {
             console.log("dbl clicked");
         }
+
+        $scope.currentBottomTab = 'Preview';
+        $scope.toggleBottomTab = function(tab){
+            if ($scope.currentBottomTab == tab){
+                $scope.currentBottomTab = '';
+                updateBottomTabSize(0);
+            } else {
+                $scope.currentBottomTab = tab; 
+                if ($("#top-content").css("bottom") == "0px"){
+                    updateBottomTabSize(136);
+                }
+            }
+            
+        }
+
+        function updateBottomTabSize(number){
+            $("#content-resizer").css({
+                    bottom: number + 'px'
+            });
+
+            $("#top-content").css({
+                bottom: number + 'px'
+            });
+            $("#bottom-content").css({
+                height: number + 'px'
+            });
+
+            var editor = ace.edit($(".editor:visible").attr("id"));
+            editor.resize();
+        }
         
         $scope.showSelectedFile = function (node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even) {
             if (isEventIsRightClick($even)) {
