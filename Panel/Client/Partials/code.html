@@ -1,5 +1,20 @@
 ﻿<html ng-app="ctrlCode" ng-cloak>
 <head>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/global/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/global/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/global/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/global/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/global/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/global/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/global/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/global/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/global/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/global/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/global/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/global/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/global/favicons/favicon-16x16.png">
+
     <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--<link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />-->
     <link href="/assets/global/css/code.css" rel="stylesheet" type="text/css" />
@@ -43,6 +58,7 @@
 
     <!-- UnderScore -->
     <script src="/assets/global/plugins/underscore/underscore-min.js"></script>
+    <script src="/assets/global/plugins/focus-me/focus-me.js"></script>
 
     
 </head>
@@ -53,7 +69,7 @@
                 <div class="row topHeader">
                     <div class="col-md-12">
                         <div class="headerBtn logo">
-                            <img src="http://images.clipartpanda.com/triangle-clipart-white-triangle-hi.png" style="height:30px;" />
+                            <img src="/assets/global/img/webspot-logo-white.png" style="height:30px;" />
                         </div>
                         <div class="headerBtn selected">
                             Code
@@ -272,7 +288,7 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="renameModal" ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">

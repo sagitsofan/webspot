@@ -25,6 +25,10 @@
     color:#fff;
 }
 
+.blueGradientBack{
+  background-image: -webkit-linear-gradient(45deg, #1972B5, #239bf5);
+  background-image: linear-gradient(45deg, #1972B5, #239bf5);
+}
 
 .ace-github{
     background:#fff !important;
@@ -61,20 +65,20 @@ iframe.locked {
 }
 
 .topHeader {
-    background: #ececec;
+    background: #242424;
     border-bottom: solid 0px #ececec;
 }
 
 .topHeader .headerBtn {
     width: 140px;
     font-size: 14px;
-    background: #ececec;
+    background: #242424;
     text-align: center;
     display: inline-block;
     padding: 15px 35px;
     color: #808080;
     cursor: pointer;
-    float:left;
+    border-right:solid 1px #2d2d2d;
 }
 .topHeader .headerBtn.logo {
     background: #242424;
@@ -84,18 +88,21 @@ iframe.locked {
 
 .topHeader .headerBtn.user {
     float: right;
-    border-left:solid 1px #dedede;
 }
 
 
 .topHeader .headerBtn.selected,.topHeader .headerBtn.selected:hover {
     background: #239bf5;
     color: #fff;
+    background-image: -webkit-linear-gradient(45deg, #1972B5, #239bf5);
+    background-image: linear-gradient(45deg, #1972B5, #239bf5);
 }
 .topHeader .headerBtn:hover {
-    background: #72a8d0;
+    background: #242424;
     color: #fff;
 }
+
+
 
 
 .editorTabs{
