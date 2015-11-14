@@ -156,16 +156,13 @@
                 
                 <div id="top-content">
                     <div style="padding: 5px;" class="pull-right">
-                        <div style="border:solid 1px #33c45e;height:30px;">
-                            <div ng-click="save()" class="pull-right btnBase btnGreen" ng-class="{'btnGreen':!isDirty || isDirty}">
-                                <span ng-show="!isDirty">Save</span>
-                                <!--isFileOpened:{{isFileOpened}}-->
-                                <span ng-show="isDirty">Save<!--Last saved: {{fileLastSaved | date:'mediumTime' }}--></span>
-                            </div>
-                            <div class="pull-right btnBase" style="background:#35d866;border-right:solid 1px #33c45e;">
-                                <input type="checkbox" id="chkIsAutoSave" style="margin:4px 0px 3px 0px;" ng-model="isAutoSave" />
-                            </div>
-                        </div>
+                      <div ng-click="save()" class="pull-right btnBase" ng-class="{'btnGreen':currentNode.isDirty}">
+                          <input type="checkbox" id="chkIsAutoSave" style="margin:4px 0px 3px 0px;" ng-model="isAutoSave" />
+
+                          <span ng-show="!isDirty">Save</span>
+                          <!--isFileOpened:{{isFileOpened}}-->
+                          <span ng-show="isDirty">Save<!--Last saved: {{fileLastSaved | date:'mediumTime' }}--></span>
+                      </div>
                     </div>
 
                     <tabset>

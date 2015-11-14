@@ -275,7 +275,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
 
                     var deSave = _.debounce(function () {
                         $scope.save();
-                    }, 2000);
+                    }, 1000);
                 }
             }, 20);
 
