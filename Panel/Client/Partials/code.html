@@ -221,7 +221,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>Delete {{currentNode.name}}?</h1>
+                            <h1>Delete '<span ng-show="currentNode.type=='folder'">/</span>{{currentNode.name}}' <span ng-show="currentNode.type=='folder'">folder</span>?</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
@@ -293,7 +293,7 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" focus-me="renameModal" ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="renameModal" focus-me-readonly ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
@@ -317,7 +317,7 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="newFile" placeholder="File name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="addFileModal" focus-me-readonly ng-model="newFile" placeholder="File name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
@@ -341,7 +341,7 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="newFolder" placeholder="Folder name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="addFolderModal" focus-me-readonly ng-model="newFolder" placeholder="Folder name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">

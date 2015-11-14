@@ -468,10 +468,13 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
         
         $scope.getNewFileLocationName = function(){
             var file = $scope.getContextMenuFile();
-            if (file.type == "folder")
-                return file.name;
-            else
-                return "/";
+            if (file){
+                if (file.type == "folder")
+                    return "/" + file.name;
+                else
+                    return "/";
+            }
+            return "";
         }
 
         $scope.addNewFile = function () {
@@ -498,7 +501,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             
             if (file.type == "folder"){
                 data.parent = file._id;
-            } else{
+            } else {
                 data.parent = "";
             }
                 
