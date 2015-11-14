@@ -1,0 +1,69 @@
+https://docs.google.com/spreadsheets/d/1IcHW5KtQ5d3Z9GpkyTM1wLtxPd0VhClSLp7jl-FZvHo/edit?ts=560d4867#gid=0
+
+
+
+Sagi
+------------
+ניהול תמונות עם טקסט
+
+
+
+Stav
+------------
+panelphone
+panelurl
+
+
+
+future tasks
+---------------------------------
+
+
+
+done
+---------------------------------
+users table - include db name
+confirm delete
+grid - directive
+Order by items drag&drop
+במידה והטייפ לא מזוהה יש לשים תמיד אינפוט ביי דיפולט
+
+הרחבה של loobyField
+שיידע לקחת HTML 
+ולפרמט על הפרטמר מתוכו
+
+לפזר לואינג בכל המערכת
+linked tables ?
+
+
+
+CODE
+======
+
+תמיכה של דאטה דינאמי במאסטר
+
+pair coding - google docs like to edit file
+
+
+keyboard shortcuts (ctrl-s = save etc...)
+history - version manager(google docs like)
+
+
+לפתוח קובץ דיפולטי
+טאבים
+לעדכן אם משהו השתנה לך מתחת לרגליים (מישהו אחר ערך נגיד)
+לשאול אם נעשה שינוי בלי סייב לפני יציאה או מעבר לקובץ אחר
+
+
+
+
+done
+======
+save files in mongo not fs
+icons to file types
+סייב אוטומטי מדי פעם
+חיווי האם הקובץ שמור או דירטי‎
+fix files path to localhost and not FS
+notify
+rename file
+add new file/folder

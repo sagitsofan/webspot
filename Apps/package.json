@@ -1,0 +1,10 @@
+{
+  "name": "webspotter",
+  "version": "0.0.0",
+  "description": "webspotter",
+  "main": "app.js",
+  "author": {
+    "name": "Sagi",
+    "email": ""
+  }
+}

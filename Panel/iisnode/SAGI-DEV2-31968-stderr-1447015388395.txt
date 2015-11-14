@@ -1,0 +1,44 @@
+TypeError: Cannot read property 'host' of undefined
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\api.js:39:48
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:138:13)
+    at Route.dispatch (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:109:3)
+    at handle (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:519:11)
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:290:22
+    at Function.process_params (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:348:12)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:284:10)
+    at Immediate.<anonymous> (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express-session\index.js:433:7)
+TypeError: Cannot read property 'host' of undefined
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\api.js:39:48
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:138:13)
+    at Route.dispatch (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:109:3)
+    at handle (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:519:11)
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:290:22
+    at Function.process_params (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:348:12)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:284:10)
+    at Immediate.<anonymous> (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express-session\index.js:433:7)
+TypeError: Cannot read property 'host' of undefined
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\api.js:39:48
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:138:13)
+    at Route.dispatch (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:109:3)
+    at handle (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:519:11)
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:290:22
+    at Function.process_params (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:348:12)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:284:10)
+    at Immediate.<anonymous> (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express-session\index.js:433:7)
+TypeError: Cannot read property 'host' of undefined
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\api.js:39:48
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:138:13)
+    at Route.dispatch (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\route.js:109:3)
+    at handle (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:519:11)
+    at Layer.handle [as handle_request] (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\lib\layer.js:93:5)
+    at C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:290:22
+    at Function.process_params (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:348:12)
+    at next (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express\node_modules\router\index.js:284:10)
+    at Immediate.<anonymous> (C:\Users\USER\Desktop\Sgol\Project\ngPanel\Panel\node_modules\express-session\index.js:433:7)

@@ -1,0 +1,60 @@
+{
+  "name": "angular-tree-control",
+  "version": "0.2.0",
+  "description": "Angular Tree Control",
+  "main": "angular-tree-control.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wix/angular-tree-control.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wix/angular-tree-control/issues"
+  },
+  "homepage": "https://github.com/wix/angular-tree-control",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-release": "~0.6.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-coffee-preprocessor": "~0.1.2",
+    "requirejs": "~2.1.10",
+    "karma-requirejs": "~0.2.1",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "karma": "~0.10.9",
+    "grunt-karma": "~0.6.2",
+    "karma-growl-reporter": "~0.1.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.6.0",
+    "karma-coverage": "~0.1.4",
+    "coveralls": "~2.6.1"
+  },
+  "gitHead": "9c44b6991db02a7ddebf7ad096e995e7643b5bd3",
+  "_id": "angular-tree-control@0.2.0",
+  "_shasum": "cfe86642b0e27c76743b2446ad44e94a321fc4e8",
+  "_from": "angular-tree-control@*",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "benoror",
+    "email": "benoror@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "benoror",
+      "email": "benoror@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "cfe86642b0e27c76743b2446ad44e94a321fc4e8",
+    "tarball": "http://registry.npmjs.org/angular-tree-control/-/angular-tree-control-0.2.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/angular-tree-control/-/angular-tree-control-0.2.0.tgz"
+}

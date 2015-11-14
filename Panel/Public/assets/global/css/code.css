@@ -1,0 +1,162 @@
+﻿body {
+    overflow: hidden;
+}
+
+.btnBase{
+    padding:4px 9px;
+    background:#242424;
+    color:#fff;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.btnBase:hover{
+    text-decoration:none;
+    color:#fff;
+}
+
+
+.btnGreen{
+    background:#35d866;
+    color:#fff;
+}
+.btnGreen:hover{
+    background:#2cc45a;
+    color:#fff;
+}
+
+
+.ace-github{
+    background:#fff !important;
+}
+
+.ace-github .ace_gutter {
+    background: #F7F7F7 !important;
+    color: #DEDEDE !important;
+    font-size: 13px !important;
+}
+
+
+#inptSearchTree {
+    padding: 6px 10px;
+    background-color: #fff;
+    outline:none;
+    width: 100%;
+    border: 0px;
+    font-size: 14px;
+    color: #242424;
+    margin-top: 5px;
+}
+
+iframe.locked {
+    pointer-events: none;
+}
+
+.editor {
+    margin: 0;
+    width: 100%;
+    height: calc(100% - 42px);
+    border:0px;
+    font-size:14px;
+}
+
+.topHeader {
+    background: #ececec;
+    border-bottom: solid 0px #ececec;
+}
+
+.topHeader .headerBtn {
+    width: 140px;
+    font-size: 14px;
+    background: #ececec;
+    text-align: center;
+    display: inline-block;
+    padding: 15px 35px;
+    color: #808080;
+    cursor: pointer;
+    float:left;
+}
+.topHeader .headerBtn.logo {
+    background: #242424;
+    padding: 10px 0px;
+    width:100px;
+}
+
+.topHeader .headerBtn.user {
+    float: right;
+    border-left:solid 1px #dedede;
+}
+
+
+.topHeader .headerBtn.selected,.topHeader .headerBtn.selected:hover {
+    background: #239bf5;
+    color: #fff;
+}
+.topHeader .headerBtn:hover {
+    background: #72a8d0;
+    color: #fff;
+}
+
+
+.editorTabs{
+    background:#242424;
+    color:#fff;
+}
+
+.bottomContentToggle {
+    width: 180px;
+    position: fixed;
+    z-index: 999999999999999;
+    right: 30px;
+    bottom:0px;
+    opacity:0.4;
+}
+.bottomContentToggle:hover {
+    opacity:1;
+}
+.bottomContentToggle div{
+    width:80px;
+    background:#ececec;
+    text-align:center;
+    display:inline-block;
+    padding:5px;
+    color:#808080;
+    cursor:pointer;
+}
+
+
+.bottomContentToggle div.selected{
+    background:#239bf5;
+    color:#fff;
+}
+
+i.icon-remove-tab:hover{
+    color:#ea0c44;
+    cursor:pointer;
+}
+
+.nav-tabs, .nav-pills{
+    margin-bottom:0px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #239bf5;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-bottom:solid 1px #239bf5;
+    border-radius:0;
+}
+
+.nav-tabs > li > a, .nav-pills > li > a{
+    color:#C3C3C3;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: #fff #fff #ddd;
+    color:#acacac;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}

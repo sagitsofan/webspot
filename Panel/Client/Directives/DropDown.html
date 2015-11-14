@@ -1,0 +1,4 @@
+﻿<select class="form-control" ng-model="model" id="form_control_1">
+    <option ng-repeat="f in field.fields" ng-model="model" ng-selected="f.name == model" value="{{f.name}}">{{f.label}}</option>
+</select>
+<label for="form_control_1">{{field.label}}</label>
