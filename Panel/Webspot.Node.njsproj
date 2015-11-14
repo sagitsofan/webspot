@@ -89,6 +89,7 @@
     <Compile Include="Classes\config.js" />
     <Compile Include="Classes\dal.js" />
     <Compile Include="Classes\mongo.js" />
+    <Compile Include="socket.js" />
     <Content Include="Client\Directives\Checkbox.html" />
     <Content Include="Client\Directives\CheckBoxs.html" />
     <Content Include="Client\Directives\Date.html" />
