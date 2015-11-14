@@ -12,7 +12,7 @@
     top: 50px;
     bottom: 0;
     left: 0;
-    width: 175px;
+    width: 240px;
     overflow: auto;
     background:#fff;
 
@@ -21,7 +21,10 @@
     position: absolute;
     top: 50px;
     bottom: 0;
-    left: 181px /* 200 + 6*/;
+    
+    /* 200 + 6*/
+    left: 240px;
+
     right: 0;
     overflow: hidden;
     color: #000;
@@ -30,7 +33,7 @@
 #top-content {
     position: absolute;
     top: 0;
-    bottom: 236px; /* 130 + 6 */
+    bottom: 136px; /* 130 + 6 */
     left: 0;
     right: 0;
     background-color: #fff;
@@ -38,7 +41,7 @@
 }
 #bottom-content {
     position: absolute;
-    height: 230px;
+    height: 130px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -47,18 +50,18 @@
 }
 
 #sidebar-resizer {
-	background-color: #fff;
+	background-color: #F7F7F7;
     position: absolute;
     top: 50px;
     bottom: 0;
-    left: 175px;
+    left: 234px;
     width: 6px;
     cursor: e-resize;
 }
 #content-resizer {
     position: absolute;
     height: 6px;
-    bottom: 230px;
+    bottom: 130px;
     left: 0;
     right: 0;
     background-color: #F7F7F7;
