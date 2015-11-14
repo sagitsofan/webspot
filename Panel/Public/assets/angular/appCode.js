@@ -83,6 +83,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             });
         }
         
+        //set active tab
         $scope.setActiveTab = function (tab) {
             _.each($scope.arrTabs, function (item, i) {
                 item.isActiveTab = false;
