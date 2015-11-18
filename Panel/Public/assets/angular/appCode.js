@@ -32,14 +32,12 @@ ctrlCode.factory('DataModel', ['$http', function ($http) {
         var data = {};
         
         data.getTree = function (tempID) {
-            
             return $http.post('/code/tree' , {
                 userid: tempID
             });
         }
         
         data.manage = function (userid, data, action) {
-            
             return $http.post('/code/manage' , {
                 userid: userid,
                 data: data,
@@ -86,7 +84,10 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
                 
                 $scope.flatTree = results.root;
                 $scope.treeData = buildTree(results.root);
-                $scope.showSelectedFile($scope.treeData[$scope.treeData.length-1])
+
+                //open first file //TODO: set start page as first file
+                var firstFile = $scope.treeData[$scope.treeData.length-1];
+
                 $scope.$apply;
             });
         }
