@@ -220,3 +220,8 @@ pip-log.txt
 Panel/node_modules
 Apps/node_modules
 
+Panel\node_modules
+Apps\node_modules
+
+
+
