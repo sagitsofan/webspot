@@ -217,17 +217,14 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-Panel/node_modules/
-Apps/node_modules/
+Panel/node_modules
+Apps/node_modules
 
 Panel\node_modules\
 Apps\node_modules\
+Panel\node_modules\mongo-express
+Apps\node_modules\mongo-express
 
-panel/node_modules/
-apps/node_modules/
-
-panel\node_modules\
-apps\node_modules\
 
 
 
