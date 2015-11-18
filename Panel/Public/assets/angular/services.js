@@ -51,7 +51,6 @@
         }
 }]);
 
-
 //factories
 ctrlApp.factory('GenericDataModel', ['$http', function ($http) {
         
@@ -91,7 +90,6 @@ ctrlApp.factory('GenericDataModel', ['$http', function ($http) {
 
         return data;
 }]);
-
 
 ctrlApp.factory('PanelDataModel', ['$http', function ($http) {
         

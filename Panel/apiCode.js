@@ -12,19 +12,33 @@ var fs = require('fs');
 // Handle uploads through Flow.js
 
 var ApiCode = (function () {
-    
-    function _initialize(app) {
+
+    function _initialize(app, io) {
         
-        app.post('/code/tree', function (req, res) {
+        io.on('connection', function (socket) {
             
-            baseDal.getUser(req.body.userid, function (user) {
+            socket.on('init', function (userid) {
                 
-                baseDal.files(user.websites[0].host, function (files) {
+                baseDal.getUser(userid, function (user) {
                     
-                    res.json(files);
+                    baseDal.files(user.websites[0].host, function (files) {
+                        
+                        io.emit('GetTree', files);
+                    });
                 });
             });
         });
+        
+        //app.post('/code/tree', function (req, res) {
+            
+        //    baseDal.getUser(req.body.userid, function (user) {
+                
+        //        baseDal.files(user.websites[0].host, function (files) {
+                    
+        //            res.json(files);
+        //        });
+        //    });
+        //});
         
         app.post('/code/manage', function (req, res) {
             

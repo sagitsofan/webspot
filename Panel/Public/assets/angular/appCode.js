@@ -18,17 +18,16 @@ ctrlCode.config(['flowFactoryProvider', function (flowFactoryProvider) {
         });
     }]);
 
-
 ctrlCode.factory('DataModel', ['$http', function ($http) {
         
         var data = {};
         
-        data.getTree = function (tempID) {
+        //data.getTree = function (tempID) {
             
-            return $http.post('/code/tree' , {
-                userid: tempID
-            });
-        }
+        //    return $http.post('/code/tree' , {
+        //        userid: tempID
+        //    });
+        //}
         
         data.manage = function (userid, data, action) {
             
@@ -42,8 +41,32 @@ ctrlCode.factory('DataModel', ['$http', function ($http) {
         return data;
     }]);
 
-ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'ngNotify', 'DataModel',
-    function ($scope, $timeout, $sce, $http, ngNotify, DataModel) {
+ctrlCode.factory('socket', function ($rootScope) {
+    var socket = io.connect();
+    return {
+        on: function (eventName, callback) {
+            socket.on(eventName, function () {
+                var args = arguments;
+                $rootScope.$apply(function () {
+                    callback.apply(socket, args);
+                });
+            });
+        },
+        emit: function (eventName, data, callback) {
+            socket.emit(eventName, data, function () {
+                var args = arguments;
+                $rootScope.$apply(function () {
+                    if (callback) {
+                        callback.apply(socket, args);
+                    }
+                });
+            })
+        }
+    };
+});
+
+ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'ngNotify', 'DataModel', 'socket',
+    function ($scope, $timeout, $sce, $http, ngNotify, DataModel, socket) {
         
         $scope.treeOptions = {
             nodeChildren: "childrens",
@@ -74,15 +97,26 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
 
         //scoped methods
         $scope.init = function () {
-            DataModel.getTree(tempID).success(function (results, status, headers, config) {
+            
+            socket.emit('init', tempID);
+
+            //DataModel.getTree(tempID).success(function (results, status, headers, config) {
                 
-                $scope.flatTree = results.root;
-                $scope.treeData = buildTree(results.root);
-                $scope.showSelectedFile($scope.treeData[$scope.treeData.length-1])
-                $scope.$apply;
-            });
+            //    $scope.flatTree = results.root;
+            //    $scope.treeData = buildTree(results.root);
+            //    $scope.showSelectedFile($scope.treeData[$scope.treeData.length-1])
+            //    $scope.$apply;
+            //});
         }
         
+        socket.on('GetTree', function (results) {
+            
+            $scope.flatTree = results.root;
+            $scope.treeData = buildTree(results.root);
+            $scope.showSelectedFile($scope.treeData[$scope.treeData.length - 1])
+            $scope.$apply;
+        });
+
         //set active tab
         $scope.setActiveTab = function (tab) {
             _.each($scope.arrTabs, function (item, i) {
