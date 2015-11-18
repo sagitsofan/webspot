@@ -1,0 +1,24 @@
+﻿<div>
+    {{field.label}}
+
+    <div class="md-checkbox-list">
+        <div class="md-checkbox" ng-repeat="f in field.fields">
+
+            <input 
+                   type="checkbox"
+                   id="checkbox_{{f.name}}"
+                   ng-checked="selection.indexOf(f.name) > -1"
+                   ng-click="toggleSelection(f.name)"
+                   value="{{f.name}}"
+                   class="md-check">
+
+            <label for="checkbox_{{f.name}}">
+                <span class="inc"></span>
+                <span class="check"></span>
+                <span class="box"></span>
+                {{f.label}}
+            </label>
+
+        </div>
+    </div>
+</div>

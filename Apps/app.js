@@ -3,10 +3,10 @@ var port = process.env.port;
 global.appRoot = __dirname;
 
 //require engines
-var express     = require('express');
-var rest        = require('./rest.js');
-var config      = require('./classes/config.js');
-var apiCode     = require('./apiCode.js');
+var express = require('express');
+var rest = require('./rest.js');
+var config = require('./classes/config.js');
+var apiCode = require('./apiCode.js');
 
 //init express engine
 var app = express();

@@ -1,6 +1,6 @@
-var baseDal     = require('../panel/classes/baseDal.js');
-var dal     =   require('../panel/classes/dal.js');
-var helper  = require('../panel/classes/helper.js');
+var baseDal     = require('../panel/node/classes/baseDal.js');
+var dal     =   require('../panel/node/classes/dal.js');
+var helper  = require('../panel/node/classes/helper.js');
 
 var Rest = (function () {
     

@@ -36,7 +36,7 @@
     <Compile Include="apiCode.js" />
     <Compile Include="Classes\generator.js" />
     <Compile Include="app.js" />
-    <Content Include="Config\site.json" />
+    <Content Include="Config\node.json" />
     <Content Include="package.json" />
     <Content Include="Public\uploadimages\3d-printer-green-small.png" />
     <Content Include="Public\uploadimages\3d-printer-green.png" />

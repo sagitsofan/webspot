@@ -1,7 +1,7 @@
 var path        = require('path');
-var baseDal     = require('../panel/classes/baseDal.js');
+var baseDal     = require('../panel/node/classes/baseDal.js');
 var generator   = require('./classes/generator.js');
-var helper   = require('../panel/classes/helper.js');
+var helper   = require('../panel/node/classes/helper.js');
 
 var ApiCode = (function () {
     

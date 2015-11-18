@@ -1,16 +1,18 @@
 //global vars
 var port            = process.env.port;
-global.appRoot      = __dirname;
+global.appRoot      = __dirname + "/node";
 
 //require engines
 var express         = require('express');
-var apiCode         = require('./apiCode.js');
-var api             = require('./api.js');
-var router          = require('./router.js');
-var config          = require('./classes/config.js');
 var bodyParser      = require('body-parser')
 var cookieParser    = require('cookie-parser')
 var session         = require('express-session')
+
+var router          = require('./router.js');
+var apiCode         = require('./node/code/code.js');
+var api             = require('./node/cms/cms.js');
+var config          = require('./node/classes/config.js');
+
 
 //init express engine
 var app = express();
@@ -21,7 +23,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 
 //using
-app.use(express.static('public'));
+app.use(express.static('client'));
 app.use(bodyParser.json());
 app.use(cookieParser())
 app.use(session({ secret: '1234567890QWERTY', resave: false, saveUninitialized: true }));
