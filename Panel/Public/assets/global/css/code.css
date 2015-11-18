@@ -3,11 +3,16 @@
 }
 
 .btnBase{
-    padding:4px 9px;
+    border:solid 0px;
+    padding: 6px 15px;
+    font-size: 14px;
+
     background:#242424;
     color:#fff;
     text-decoration:none;
     cursor:pointer;
+    font-weight: normal;
+
 }
 
 .btnBase:hover{
@@ -25,6 +30,23 @@
     color:#fff;
 }
 
+.btnBlue{
+  background-image: -webkit-linear-gradient(45deg, #1972B5, #239bf5);
+  background-image: linear-gradient(45deg, #1972B5, #239bf5);
+  color:#fff;
+}
+.btnRed{
+  background-image: -webkit-linear-gradient(45deg, #f65959, #e52424);
+  background-image: linear-gradient(45deg, #f65959, #e52424);
+  color:#fff;
+}
+
+
+
+.blueGradientBack{
+  background-image: -webkit-linear-gradient(45deg, #1972B5, #239bf5);
+  background-image: linear-gradient(45deg, #1972B5, #239bf5);
+}
 
 .ace-github{
     background:#fff !important;
@@ -61,41 +83,51 @@ iframe.locked {
 }
 
 .topHeader {
-    background: #ececec;
+    background: #242424;
     border-bottom: solid 0px #ececec;
 }
 
 .topHeader .headerBtn {
     width: 140px;
     font-size: 14px;
-    background: #ececec;
+    background: #242424;
     text-align: center;
     display: inline-block;
     padding: 15px 35px;
     color: #808080;
     cursor: pointer;
-    float:left;
+    border-right:solid 1px #2d2d2d;
 }
+
+
+
 .topHeader .headerBtn.logo {
-    background: #242424;
-    padding: 10px 0px;
+    padding: 0px 0px;
+    border-right:0px;
     width:100px;
 }
 
+
+
+
+
 .topHeader .headerBtn.user {
     float: right;
-    border-left:solid 1px #dedede;
 }
 
 
 .topHeader .headerBtn.selected,.topHeader .headerBtn.selected:hover {
     background: #239bf5;
     color: #fff;
+    background-image: -webkit-linear-gradient(45deg, #1972B5, #239bf5);
+    background-image: linear-gradient(45deg, #1972B5, #239bf5);
 }
 .topHeader .headerBtn:hover {
-    background: #72a8d0;
+    background: #242424;
     color: #fff;
 }
+
+
 
 
 .editorTabs{
@@ -124,10 +156,18 @@ iframe.locked {
     cursor:pointer;
 }
 
+.modal-body h1{
+    font-size:14px;
+    margin-bottom:16px;
+}
 
 .bottomContentToggle div.selected{
     background:#239bf5;
     color:#fff;
+}
+
+.modal-backdrop.in{
+    opacity: 0.8;
 }
 
 i.icon-remove-tab:hover{

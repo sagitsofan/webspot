@@ -1,5 +1,23 @@
 ﻿<html ng-app="ctrlCode" ng-cloak>
 <head>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/global/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/global/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/global/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/global/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/global/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/global/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/global/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/global/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/global/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/global/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/global/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/global/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/global/favicons/favicon-16x16.png">
+
     <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!--<link href="/assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />-->
     <link href="/assets/global/css/code.css" rel="stylesheet" type="text/css" />
@@ -42,7 +60,8 @@
     <link href="../../assets/global/plugins/ng-notify/ng-notify.min.css" rel="stylesheet" type="text/css">
 
     <!-- UnderScore -->
-    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="/assets/global/plugins/underscore/underscore-min.js"></script>
+    <script src="/assets/global/plugins/focus-me/focus-me.js"></script>
 
     
 </head>
@@ -53,7 +72,7 @@
                 <div class="row topHeader">
                     <div class="col-md-12">
                         <div class="headerBtn logo">
-                            <img src="http://images.clipartpanda.com/triangle-clipart-white-triangle-hi.png" style="height:30px;" />
+                            <img src="/assets/global/img/webspot-logo-white.png" style="height:30px;" />
                         </div>
                         <div class="headerBtn selected">
                             Code
@@ -76,7 +95,7 @@
                     </div>
                 </div>
             </div>
-            <div id="sidebar">
+            <div id="sidebar" class="blueGradientBack">
                 <!-- Your custom menu with dropdown-menu as default styling -->
                 <div id="context-menu" style="position: absolute; z-index: 9999; top: 99px; left: 191.5px;" class="">
                     <ul class="dropdown-menu" role="menu">
@@ -137,16 +156,13 @@
                 
                 <div id="top-content">
                     <div style="padding: 5px;" class="pull-right">
-                        <div style="border:solid 1px #33c45e;height:30px;">
-                            <div ng-click="save()" class="pull-right btnBase btnGreen" ng-class="{'btnGreen':!isDirty || isDirty}">
-                                <span ng-show="!isDirty">Save</span>
-                                <!--isFileOpened:{{isFileOpened}}-->
-                                <span ng-show="isDirty">Save<!--Last saved: {{fileLastSaved | date:'mediumTime' }}--></span>
-                            </div>
-                            <div class="pull-right btnBase" style="background:#35d866;border-right:solid 1px #33c45e;">
-                                <input type="checkbox" id="chkIsAutoSave" style="margin:4px 0px 3px 0px;" ng-model="isAutoSave" />
-                            </div>
-                        </div>
+                      <div ng-click="save()" class="pull-right btnBase" ng-class="{'btnGreen':currentNode.isDirty}">
+                          <input type="checkbox" id="chkIsAutoSave" style="margin:4px 0px 3px 0px;" ng-model="isAutoSave" />
+
+                          <span ng-show="!isDirty">Save</span>
+                          <!--isFileOpened:{{isFileOpened}}-->
+                          <span ng-show="isDirty">Save<!--Last saved: {{fileLastSaved | date:'mediumTime' }}--></span>
+                      </div>
                     </div>
 
                     <tabset>
@@ -160,14 +176,12 @@
                             <pre class="editor" id="editor_{{tabItem._id}}"></pre>
                         </tab>
                     </tabset>
-
-                    
                 </div>
 
                 <div id="bottom-content" ng-dblclick="enlargeBottomTab()">
-                    <div class="bottomContentToggle" ng-init="currentBottomTab = 'Preview'">
-                        <div ng-class="{selected: currentBottomTab == 'CMS'}" ng-click="currentBottomTab = 'CMS'">CMS</div>
-                        <div ng-class="{selected: currentBottomTab == 'Preview'}" ng-click="currentBottomTab = 'Preview'">Preview</div>
+                    <div class="bottomContentToggle">
+                        <div ng-class="{selected: currentBottomTab == 'CMS'}" ng-click="toggleBottomTab('CMS')">CMS</div>
+                        <div ng-class="{selected: currentBottomTab == 'Preview'}" ng-click="toggleBottomTab('Preview')">Preview</div>
                     </div>
                     <div ng-show="currentBottomTab == 'CMS'">
                         <h3>{{currentNode.name}}</h3>
@@ -204,12 +218,14 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>Delete {{currentNode.name}}?</h1>
+                            <h1>Delete '<span ng-show="currentNode.type=='folder'">/</span>{{currentNode.name}}' <span ng-show="currentNode.type=='folder'">folder</span>?</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="delete()">Delete</button>
-                                        <button type="button" class="btn default" ng-click="deleteModal = false">Cancel</button>
+                                        <button ng-hide="showDeleteConfirm" type="button" class="btnBase btnRed" ng-click="showDeleteConfirm=true">Delete</button>
+                                        <button ng-show="showDeleteConfirm" type="button" class="btnBase btnRed" ng-click="delete()">Confirm Delete</button>
+
+                                        <button type="button" class="btnBase" ng-click="deleteModal = false;showDeleteConfirm=false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -255,8 +271,8 @@
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn default" ng-click="uploadModal = false">Cancel</button>
-                                        <button type="button" class="btn green" ng-click="uploadFiles()">Save</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="uploadModal = false">Cancel</button>
+                                        <button type="button" class="btnBase" ng-click="uploadFiles()">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -274,13 +290,13 @@
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="renameModal" focus-me-readonly ng-model="fileToRename" placeholder="File name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="renameFile()">Save</button>
-                                        <button type="button" class="btn default" ng-click="renameModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="renameFile()">Save</button>
+                                        <button type="button" class="btnBase" ng-click="renameModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -294,17 +310,17 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>New file</h1>
+                            <h1>Create new file in '{{getNewFileLocationName()}}'</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="newFile" placeholder="File name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="addFileModal" focus-me-readonly ng-model="newFile" placeholder="File name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="addNewFile(newFile)">Save</button>
-                                        <button type="button" class="btn default" ng-click="addFileModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="addNewFile(newFile)">Save</button>
+                                        <button type="button" class="btnBase" ng-click="addFileModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>
@@ -318,17 +334,17 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <h1>New Folder</h1>
+                            <h1>Create new folder in '{{getNewFileLocationName()}}'</h1>
                             <div class="scroller" style="height:100px" data-always-visible="1" data-rail-visible1="1">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input type="text" ng-model="newFolder" placeholder="Folder name" class="col-md-12 form-control">
+                                        <input type="text" focus-me="addFolderModal" focus-me-readonly ng-model="newFolder" placeholder="Folder name" class="col-md-12 form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top:20px;margin-top:20px;text-align:center">
                                     <div class="col-md-12">
-                                        <button type="button" class="btn green" ng-click="addNewFolder()">Save</button>
-                                        <button type="button" class="btn default" ng-click="addFolderModal = false">Cancel</button>
+                                        <button type="button" class="btnBase btnBlue" ng-click="addNewFolder()">Save</button>
+                                        <button type="button" class="btnBase" ng-click="addFolderModal = false">Cancel</button>
                                     </div>
                                 </div>
                             </div>

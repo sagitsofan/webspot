@@ -1,5 +1,13 @@
 ﻿var arrBlockEditor = ["png", "jpg", "jpeg"];
-var ctrlCode = angular.module("ctrlCode", ['treeControl', 'mc.resizer', 'ngNotify', 'ui.bootstrap.modal', 'ui.bootstrap', 'flow']);
+var ctrlCode = angular.module("ctrlCode", [
+    'treeControl',
+    'mc.resizer',
+    'ngNotify',
+    'ui.bootstrap.modal',
+    'ui.bootstrap',
+    'flow',
+    'focus-me'
+]);
 
 ctrlCode.config(['flowFactoryProvider', function (flowFactoryProvider) {
         flowFactoryProvider.defaults = {
@@ -24,14 +32,12 @@ ctrlCode.factory('DataModel', ['$http', function ($http) {
         var data = {};
         
         data.getTree = function (tempID) {
-            
             return $http.post('/code/tree' , {
                 userid: tempID
             });
         }
         
         data.manage = function (userid, data, action) {
-            
             return $http.post('/code/manage' , {
                 userid: userid,
                 data: data,
@@ -78,7 +84,10 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
                 
                 $scope.flatTree = results.root;
                 $scope.treeData = buildTree(results.root);
-                $scope.showSelectedFile($scope.treeData[$scope.treeData.length-1])
+
+                //open first file //TODO: set start page as first file
+                var firstFile = $scope.treeData[$scope.treeData.length-1];
+
                 $scope.$apply;
             });
         }
@@ -267,7 +276,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
 
                     var deSave = _.debounce(function () {
                         $scope.save();
-                    }, 2000);
+                    }, 1000);
                 }
             }, 20);
 
@@ -320,6 +329,36 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
         $scope.enlargeBottomTab = function () {
             console.log("dbl clicked");
         }
+
+        $scope.currentBottomTab = 'Preview';
+        $scope.toggleBottomTab = function(tab){
+            if ($scope.currentBottomTab == tab){
+                $scope.currentBottomTab = '';
+                updateBottomTabSize(0);
+            } else {
+                $scope.currentBottomTab = tab; 
+                if ($("#top-content").css("bottom") == "0px"){
+                    updateBottomTabSize(136);
+                }
+            }
+            
+        }
+
+        function updateBottomTabSize(number){
+            $("#content-resizer").css({
+                    bottom: number + 'px'
+            });
+
+            $("#top-content").css({
+                bottom: number + 'px'
+            });
+            $("#bottom-content").css({
+                height: number + 'px'
+            });
+
+            var editor = ace.edit($(".editor:visible").attr("id"));
+            editor.resize();
+        }
         
         $scope.showSelectedFile = function (node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even) {
             if (isEventIsRightClick($even)) {
@@ -365,7 +404,7 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
                 $scope.treeData = buildTree($scope.flatTree);
                 
                 $scope.deleteModal = false;
-                
+                $scope.showDeleteConfirm = false;
                 //show confirmation
                 ngNotify.set('Deleted ok', { type: 'info' });
             });
@@ -458,6 +497,17 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             });
         }
         
+        $scope.getNewFileLocationName = function(){
+            var file = $scope.getContextMenuFile();
+            if (file){
+                if (file.type == "folder")
+                    return "/" + file.name;
+                else
+                    return "/";
+            }
+            return "";
+        }
+
         $scope.addNewFile = function () {
             
             if ($scope.newFile == undefined || $scope.newFile == "") {
@@ -479,11 +529,14 @@ ctrlCode.controller('codeController', ['$scope', '$timeout', '$sce', '$http', 'n
             data._id = null;
             data.name = $scope.newFile;
             data.type = "file";
-            if (file.type == "folder")
-                data.parent = file._id;
-            else
-                data.parent = "";
             
+            if (file.type == "folder"){
+                data.parent = file._id;
+            } else {
+                data.parent = "";
+            }
+                
+
             data.content = "";
             
             DataModel.manage(tempID, data, "add").success(function (results, status, headers, config) {
