@@ -7,7 +7,7 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Webspot.Node", "Panel\Websp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{CC2AF196-C58A-430A-84A1-79764CF34E6B}"
 	ProjectSection(SolutionItems) = preProject
-		Tasks.txt = Tasks.txt
+		Panel\Tasks.txt = Panel\Tasks.txt
 	EndProjectSection
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Webspot.Apps", "Apps\Webspot.Apps.njsproj", "{EEB91FC6-D5E3-47C0-878D-57F94D117AB9}"
