@@ -1,13 +1,14 @@
 var path        = require('path');
-var baseDal     = require('../panel/node/classes/baseDal.js');
+var baseDal     = require('../../panel/node/classes/baseDal.js');
+var helper      = require('../../panel/node/classes/helper.js');
 var generator   = require('./classes/generator.js');
-var helper   = require('../panel/node/classes/helper.js');
 
 var ApiCode = (function () {
     
     function _initialize(app) {
         
         function renderResource(userid, url, specialFile, res) {
+
             if (specialFile) {
                 //serve static content
                 res.sendFile(path.join(__dirname + '/Public/assets/uploadimages/' + url));

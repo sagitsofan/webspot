@@ -4,15 +4,15 @@ global.appRoot = __dirname;
 
 //require engines
 var express = require('express');
-var rest = require('./rest.js');
-var config = require('./classes/config.js');
-var apiCode = require('./apiCode.js');
+var rest    = require('./node/rest.js');
+var config  = require('./node/classes/config.js');
+var apiCode = require('./node/apiCode.js');
 
 //init express engine
 var app = express();
 
 //using
-app.use(express.static('public'));
+app.use(express.static('resources'));
 
 //init apps
 rest.initialize(app);

@@ -1,4 +1,4 @@
-﻿var ctrlApp = angular.module("ctrlApp", ['ngRoute', 'ui.bootstrap.modal', 'flow', 'ui.sortable', 'ngNotify']).config(['$routeProvider', function ($routeProvider) {
+﻿var ctrlApp = angular.module("ctrlApp", ['ngRoute', 'ui.bootstrap.modal', 'flow', 'ui.sortable', 'ngNotify']).config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider.
                     when('/cms', { templateUrl: '/cms/views/welcome/welcome.html' }).
                     when('/dashboard', { templateUrl: '/client/dashboard/dashboard.html' }).
@@ -8,8 +8,7 @@
                     when('/add/:schema', { templateUrl: '/cms/views/details/details.html' }).
                     otherwise({ redirectTo: '/' });
         
-        //$locationProvider.html5Mode(true);
-
+        $locationProvider.html5Mode(true);
 }]);
 
 ctrlApp.config(['flowFactoryProvider', function (flowFactoryProvider) {

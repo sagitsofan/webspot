@@ -31,26 +31,26 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Classes\config.js" />
-    <Compile Include="rest.js" />
-    <Compile Include="apiCode.js" />
-    <Compile Include="Classes\generator.js" />
+    <Compile Include="node\classes\config.js" />
+    <Compile Include="node\rest.js" />
+    <Compile Include="node\apiCode.js" />
+    <Compile Include="node\classes\generator.js" />
     <Compile Include="app.js" />
-    <Content Include="Config\node.json" />
-    <Content Include="package.json" />
-    <Content Include="Public\uploadimages\3d-printer-green-small.png" />
-    <Content Include="Public\uploadimages\3d-printer-green.png" />
-    <Content Include="Public\uploadimages\bottelito_new - Copy.png" />
-    <Content Include="Public\uploadimages\Corrections.jpg" />
-    <Content Include="Public\uploadimages\DeeGreen.jpg" />
-    <Content Include="Public\uploadimages\logo-ysoft.png" />
+    <Content Include="node\config\node.json" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\3d-printer-green-small.png" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\3d-printer-green.png" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\bottelito_new - Copy.png" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\Corrections.jpg" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\DeeGreen.jpg" />
+    <Content Include="resources\5611212a7f3f65ad98bb5bc7\logo-ysoft.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Config\" />
-    <Folder Include="Public\" />
-    <Folder Include="Public\uploadimages\" />
+    <Folder Include="node\classes\" />
+    <Folder Include="node\config\" />
+    <Folder Include="node\" />
+    <Folder Include="resources\" />
+    <Folder Include="resources\5611212a7f3f65ad98bb5bc7\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

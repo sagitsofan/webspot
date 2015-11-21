@@ -1,5 +1,5 @@
-﻿var dal         = require('../../panel/node/classes/dal.js');
-var baseDal     = require('../../panel/node/classes/baseDal.js');
+﻿var dal         = require('../../../panel/node/classes/dal.js');
+var baseDal     = require('../../../panel/node/classes/baseDal.js');
 var _           = require('underscore');
 var cheerio     = require('cheerio');
 var async       = require('async/lib/async.js');
