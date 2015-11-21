@@ -1,6 +1,6 @@
 ﻿//global vars
 var port = process.env.port;
-global.appRoot = __dirname;
+global.appRoot = __dirname + "/node";
 
 //require engines
 var express = require('express');
